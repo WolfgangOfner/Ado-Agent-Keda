@@ -1,0 +1,87 @@
+ trigger: none
+
+ pool: Keda
+
+ variables:
+   buildConfiguration: 'Release'
+   
+ jobs:
+ - job: job1
+   steps:
+   - task: Bash@3
+     inputs:
+       targetType: 'inline'
+       script: ''
+     displayName: Check if job is running
+
+# - job: job1
+#   steps:
+#   - task: Bash@3
+#     inputs:
+#       targetType: 'inline'
+#       script: 'sleep 5m'
+#     displayName: Wait for 5 minutes#
+# - job: job2
+#   steps:
+#   - task: Bash@3
+#     inputs:
+#       targetType: 'inline'
+#       script: 'sleep 5m'
+#     displayName: Wait for 5 minutes
+# - job: job3
+#   steps:
+#   - task: Bash@3
+#     inputs:
+#       targetType: 'inline'
+#       script: 'sleep 5m'
+#     displayName: Wait for 5 minutes
+#   
+# - job: job4
+#   steps:
+#   - task: Bash@3
+#     inputs:
+#       targetType: 'inline'
+#       script: 'sleep 5m'
+#     displayName: Wait for 5 minutes
+# - job: job5
+#   steps:
+#   - task: Bash@3
+#     inputs:
+#       targetType: 'inline'
+#       script: 'sleep 5m'
+#     displayName: Wait for 5 minutes
+# - job: job6
+#   steps:
+#   - task: Bash@3
+#     inputs:
+#       targetType: 'inline'
+#       script: 'sleep 5m'
+#     displayName: Wait for 5 minutes
+# - job: job7
+#   steps:
+#   - task: Bash@3
+#     inputs:
+#       targetType: 'inline'
+#       script: 'sleep 5m'
+#     displayName: Wait for 5 minutes
+# - job: job8
+#   steps:
+#   - task: Bash@3
+#     inputs:
+#       targetType: 'inline'
+#       script: 'sleep 5m'
+#     displayName: Wait for 5 minutes
+# - job: job9
+#   steps:
+#   - task: Bash@3
+#     inputs:
+#       targetType: 'inline'
+#       script: 'sleep 5m'
+#     displayName: Wait for 5 minutes
+# - job: job10
+#   steps:
+#   - task: Bash@3
+#     inputs:
+#       targetType: 'inline'
+#       script: 'sleep 5m'
+#     displayName: Wait for 5 minutes
