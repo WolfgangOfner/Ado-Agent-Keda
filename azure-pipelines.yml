@@ -20,7 +20,7 @@
 #     inputs:
 #       targetType: 'inline'
 #       script: 'sleep 5m'
-#     displayName: Wait for 5 minutes#
+#     displayName: Wait for 5 minutes
 # - job: job2
 #   steps:
 #   - task: Bash@3
