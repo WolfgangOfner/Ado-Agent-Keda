@@ -3,7 +3,7 @@ kind: Secret
 metadata:
   name: ado-agent-secret
 data:
-  AZP_TOKEN: d3Y0enZremNsdHdiaTIyc2psNHVyenl2bGl5ampkZHVpbG5ramRtd2FmZXByeG5sN25rcQ== # replace with your value / (base64 encoded)
+  AZP_TOKEN: cDVvdDNwZDNpdTNzYm1rM3Z5cDV6M3N4cXZ3N3d4d2M3aDd2ZWtlNTRqd241czJmNTJscQ== # replace with your value / (base64 encoded)
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -34,3 +34,5 @@ spec:
               secretKeyRef:
                 name: ado-agent-secret
                 key: AZP_TOKEN
+        securityContext:
+          privileged: true

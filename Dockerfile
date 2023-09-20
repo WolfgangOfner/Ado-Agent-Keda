@@ -19,8 +19,14 @@ RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb
-RUN apt-get update && apt-get install -y dotnet-sdk-6.0
-RUN apt-get update && apt-get install -y dotnet-sdk-7.0
+RUN echo 'deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /' | tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+RUN curl -fsSL https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable/xUbuntu_20.04/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/devel_kubic_libcontainers_stable.gpg > /dev/null
+RUN apt-get update 
+RUN apt-get install -y dotnet-sdk-6.0
+RUN apt-get install -y dotnet-sdk-7.0
+RUN apt -y install podman fuse-overlayfs
+
+VOLUME /var/lib/containers
 
 # Can be 'linux-x64', 'linux-arm64', 'linux-arm', 'rhel.6-x64'.
 ENV TARGETARCH=linux-x64
