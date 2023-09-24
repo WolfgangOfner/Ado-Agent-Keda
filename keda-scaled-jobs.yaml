@@ -20,6 +20,8 @@ spec:
                 key: AZP_TOKEN
           - name: AZP_POOL
             value: Keda # replace with your value
+          securityContext:
+            privileged: true
   pollingInterval: 10
   successfulJobsHistoryLimit: 5
   failedJobsHistoryLimit: 5
